@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BigNotification"
+    android:orientation="vertical">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BIG_TEXT"
+        android:gravity="center"
+        android:onClick="sendBigTextNotification"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BIG_PICTURE"
+        android:gravity="center"
+        android:onClick="sendBigPictureNotification"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="INBOX"
+        android:gravity="center"
+        android:onClick="sendInboxNotification"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MESSAGING"
+        android:gravity="center"
+        android:onClick="sendMessagingNotification"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CONVERSATION"
+        android:gravity="center"
+        android:onClick="sendConversationNotification"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MEDIA"
+        android:gravity="center"
+        android:onClick="sendMediaNotification"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DECORATED"
+        android:gravity="center"
+        android:onClick="sendDecoratedNotification"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CUSTOM"
+        android:gravity="center"
+        android:onClick="sendCustomNotification"
+
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BIG CUSTOM"
+        android:gravity="center"
+        android:onClick="sendBigCustomNotification"
+        />
+
+</LinearLayout>

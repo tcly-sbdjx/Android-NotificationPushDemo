@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/normal_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="普通通知"
+        android:gravity="center"
+        android:onClick="goToNormalNotification"
+        />
+
+    <Button
+        android:id="@+id/mini_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="大视图通知"
+        android:gravity="center"
+        android:onClick="goToBigNotification"
+        />
+
+    <Button
+        android:id="@+id/bigtext_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="组通知"
+        android:gravity="center"
+        android:onClick="goToGroupNotification"
+        />
+
+    <Button
+        android:id="@+id/bigpic_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="特殊通知"
+        android:gravity="center"
+        android:onClick="goToSpecalNotification"
+        />
+
+</LinearLayout>
