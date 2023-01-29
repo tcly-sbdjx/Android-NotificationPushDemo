@@ -4,6 +4,7 @@
     package="com.example.notificationstyle">
 
     <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:allowBackup="true"
@@ -15,6 +16,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NotificationStyle"
         tools:targetApi="31">
+        <service
+            android:name=".MediaService"
+            android:enabled="true"
+            android:exported="true"></service>
+
         <activity
             android:name=".SpecialNotification"
             android:exported="false" />

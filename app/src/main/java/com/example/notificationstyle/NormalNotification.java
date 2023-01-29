@@ -51,6 +51,7 @@ public class NormalNotification extends AppCompatActivity {
         NotificationCompat.Builder notificationBuilder=new NotificationCompat.Builder(mContext,"channel")
                 .setSmallIcon(R.drawable.image)
                 .setContentTitle("basic_"+mID)
+                .setContentIntent(mPendingIntent)
                 .setContentText("19961226 "+randomText);
 
         mNotificationManager.notify(mID,notificationBuilder.build());
@@ -64,7 +65,8 @@ public class NormalNotification extends AppCompatActivity {
                 .setContentTitle("fullscreen_"+mID)
                 .setContentText("19961226 "+randomText)
                 .setFullScreenIntent(mPendingIntent,true);
-
+        Toast.makeText(mContext,"请退回到桌面", Toast.LENGTH_SHORT).show();
+        Thread.sleep(2000);
         mNotificationManager.notify(mID,notificationBuilder.build());
         mID+=1;
     }
@@ -90,7 +92,7 @@ public class NormalNotification extends AppCompatActivity {
                 .setContentIntent(mPendingIntent);
 
         Toast.makeText(mContext,"请退回到桌面", Toast.LENGTH_SHORT).show();
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         mNotificationManager.notify(mID,notificationBuilder.build());
         mID+=1;
     }
