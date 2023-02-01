@@ -69,15 +69,14 @@
         android:text="CUSTOM"
         android:gravity="center"
         android:onClick="sendCustomNotification"
-
         />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="BIG CUSTOM"
+        android:text="CALL"
         android:gravity="center"
-        android:onClick="sendBigCustomNotification"
+        android:onClick="sendCallNotification"
         />
 
 </LinearLayout>

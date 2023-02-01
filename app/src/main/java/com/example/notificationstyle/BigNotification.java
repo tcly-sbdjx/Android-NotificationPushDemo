@@ -7,6 +7,7 @@ import androidx.core.app.Person;
 import androidx.core.graphics.drawable.IconCompat;
 
 import android.annotation.SuppressLint;
+import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -23,6 +24,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.RemoteViews;
 import android.widget.Toast;
 
 import java.util.Random;
@@ -209,25 +211,6 @@ public class BigNotification extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     public void sendMediaNotification(View view){
-//        Notification.Builder builder= null;
-//        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-//            builder = new Notification.Builder(mContext,"channel")
-//                    .setContentTitle("title")
-//                    .setContentText("text")
-//                    .setSmallIcon(Icon.createWithBitmap(small));
-//        }
-//        Notification notification=builder.setVisibility(Notification.VISIBILITY_PUBLIC)
-//               .setSmallIcon(Icon.createWithBitmap(small))
-//               .addAction(android.R.drawable.ic_media_previous, "Previous", mPendingIntent) // #0
-//               .addAction(android.R.drawable.ic_media_play, "Pause", mPendingIntent)  // #1
-//               .addAction(android.R.drawable.ic_media_next, "Next", mPendingIntent)
-//               .setStyle(new Notification.MediaStyle()
-//                       .setShowActionsInCompactView(0,1,2)
-//                       .setMediaSession(new MediaSession(mContext,"MediaSession").getSessionToken()))
-//               .setLargeIcon(small)
-//               .setOngoing(true)
-//               .build();
-//        mNotificationManager.notify(mID,notification);
         Intent intent=new Intent(this, MediaService.class);
         intent.putExtra("id",mID);
         startService(intent);
@@ -235,14 +218,37 @@ public class BigNotification extends AppCompatActivity {
     }
 
     public void sendDecoratedNotification(View view){
-
+        int randomText=mRrandom.nextInt(10000);
+        RemoteViews remoteViews=new RemoteViews(getPackageName(),R.layout.custom_notification);
+        NotificationCompat.Builder notificationBuilder=new NotificationCompat.Builder(mContext,"channel")
+                .setSmallIcon(R.drawable.image)
+                .setContentTitle("Decorated_"+mID)
+                .setContentText("19961226"+randomText)
+                .setStyle(new NotificationCompat.DecoratedCustomViewStyle())
+                .setCustomContentView(remoteViews)
+                .setCustomBigContentView(remoteViews);
+        mNotificationManager.notify(mID,notificationBuilder.build());
+        mID+=1;
     }
 
     public void sendCustomNotification(View view){
-
+        int randomText=mRrandom.nextInt(10000);
+        RemoteViews remoteViews=new RemoteViews(getPackageName(),R.layout.custom_notification);
+        NotificationCompat.Builder notificationBuilder=new NotificationCompat.Builder(mContext,"channel")
+                .setSmallIcon(R.drawable.image)
+                .setContentTitle("custom_"+mID)
+                .setContentText("19961226"+randomText)
+                .setCustomContentView(remoteViews)
+                .setCustomBigContentView(remoteViews);
+        mNotificationManager.notify(mID,notificationBuilder.build());
+        mID+=1;
     }
 
-    public void sendBigCustomNotification(View view){
-
+    @RequiresApi(api = Build.VERSION_CODES.S)
+    public void sendCallNotification(View view){
+        Intent intent=new Intent(this, CallService.class);
+        intent.putExtra("id",mID);
+        startService(intent);
+        mID+=1;
     }
 }

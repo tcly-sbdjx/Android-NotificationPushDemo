@@ -52,6 +52,7 @@ public class NormalNotification extends AppCompatActivity {
                 .setSmallIcon(R.drawable.image)
                 .setContentTitle("basic_"+mID)
                 .setContentIntent(mPendingIntent)
+                .setAutoCancel(true)
                 .setContentText("19961226 "+randomText);
 
         mNotificationManager.notify(mID,notificationBuilder.build());

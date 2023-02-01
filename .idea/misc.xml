@@ -7,11 +7,15 @@
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.233" />
         <entry key="app/src/main/res/drawable/ic___image__1_.xml" value="0.233" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.233" />
+        <entry key="app/src/main/res/drawable/shape_edit_item_bg_select_with_padding.xml" value="0.1805" />
         <entry key="app/src/main/res/layout/activity_big_notification.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_full_screen.xml" value="0.17291666666666666" />
+        <entry key="app/src/main/res/layout/activity_group_notificatin.xml" value="0.17291666666666666" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2866847826086957" />
         <entry key="app/src/main/res/layout/activity_normal_notification.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_settings.xml" value="0.17291666666666666" />
+        <entry key="app/src/main/res/layout/activity_special_notification.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/custom_notification.xml" value="0.18" />
         <entry key="app/src/main/res/layout/menu.xml" value="0.17239583333333333" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.17291666666666666" />
         <entry key="app/src/main/res/menu/meun.xml" value="0.1311930241775664" />
