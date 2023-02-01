@@ -41,7 +41,7 @@ public class MediaService extends Service {
         mPendingIntent=PendingIntent.getActivity(this,0,mIntent,PendingIntent.FLAG_IMMUTABLE);
         Notification.Builder builder= null;
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            builder = new Notification.Builder(this,"channel")
+            builder = new Notification.Builder(this,"channel1")
                     .setContentTitle("title")
                     .setContentText("text")
                     .setSmallIcon(R.drawable.image);

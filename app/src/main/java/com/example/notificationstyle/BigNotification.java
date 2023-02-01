@@ -24,6 +24,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.RemoteViews;
 import android.widget.Toast;
 
@@ -33,7 +34,7 @@ public class BigNotification extends AppCompatActivity {
     private NotificationManager mNotificationManager;
     private NotificationChannel mNotificationChannel;
     private Context mContext;
-    private int mID=1000;
+    private int mID=2000;
     private Intent mIntent;
     private PendingIntent mPendingIntent;
     private Random mRrandom;
@@ -51,7 +52,7 @@ public class BigNotification extends AppCompatActivity {
 
         mContext=getApplicationContext();
         mNotificationManager=(NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-        mNotificationChannel=new NotificationChannel("channel","testChannel",NotificationManager.IMPORTANCE_HIGH);
+        mNotificationChannel=new NotificationChannel("channel1","大视图通知",NotificationManager.IMPORTANCE_HIGH);
         mNotificationManager.createNotificationChannel(mNotificationChannel);
         mIntent=new Intent(this,MainActivity.class);
         mPendingIntent=PendingIntent.getActivity(this,0,mIntent,PendingIntent.FLAG_IMMUTABLE);
@@ -87,7 +88,7 @@ public class BigNotification extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.S)
     public void sendBigTextNotification(View view){
         int randomText=mRrandom.nextInt(10000);
-        NotificationCompat.Builder notificationBuilder=new NotificationCompat.Builder(mContext,"channel")
+        NotificationCompat.Builder notificationBuilder=new NotificationCompat.Builder(mContext,"channel1")
                 .setSmallIcon(R.drawable.image)
                 .setContentTitle("bigtext_"+mID)
                 .setContentText("19961226"+randomText)
@@ -106,7 +107,7 @@ public class BigNotification extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.S)
     public void sendBigPictureNotification(View view){
         int randomText=mRrandom.nextInt(10000);
-        NotificationCompat.Builder notificationBuilder=new NotificationCompat.Builder(mContext,"channel")
+        NotificationCompat.Builder notificationBuilder=new NotificationCompat.Builder(mContext,"channel1")
                 .setSmallIcon(R.drawable.image)
                 .setContentTitle("bigpicture_"+mID)
                 .setContentText("19961226"+randomText)
@@ -123,7 +124,7 @@ public class BigNotification extends AppCompatActivity {
 
     public void sendInboxNotification(View view){
         int randomText=mRrandom.nextInt(10000);
-        NotificationCompat.Builder notificationBuilder=new NotificationCompat.Builder(mContext,"channel")
+        NotificationCompat.Builder notificationBuilder=new NotificationCompat.Builder(mContext,"channel1")
                 .setSmallIcon(R.drawable.image)
                 .setContentTitle("inbox_"+mID)
                 .setContentText("19961226"+randomText)
@@ -156,7 +157,7 @@ public class BigNotification extends AppCompatActivity {
         }
         NotificationCompat.Builder mseeageNotification = null;
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N_MR1) {
-            mseeageNotification = new NotificationCompat.Builder(mContext,"channel")
+            mseeageNotification = new NotificationCompat.Builder(mContext,"channel1")
                     .setStyle(new NotificationCompat.MessagingStyle("会话通知")
                             .setGroupConversation(true)
                             .addMessage("message1",System.currentTimeMillis(),person1)
@@ -193,7 +194,7 @@ public class BigNotification extends AppCompatActivity {
         }
         NotificationCompat.Builder messageNotification = null;
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N_MR1) {
-            messageNotification = new NotificationCompat.Builder(mContext,"channel")
+            messageNotification = new NotificationCompat.Builder(mContext,"channel1")
                     .setStyle(new NotificationCompat.MessagingStyle("会话通知")
                             .setGroupConversation(true)
                             .addMessage("message1",System.currentTimeMillis(),person1)
@@ -220,7 +221,7 @@ public class BigNotification extends AppCompatActivity {
     public void sendDecoratedNotification(View view){
         int randomText=mRrandom.nextInt(10000);
         RemoteViews remoteViews=new RemoteViews(getPackageName(),R.layout.custom_notification);
-        NotificationCompat.Builder notificationBuilder=new NotificationCompat.Builder(mContext,"channel")
+        NotificationCompat.Builder notificationBuilder=new NotificationCompat.Builder(mContext,"channel1")
                 .setSmallIcon(R.drawable.image)
                 .setContentTitle("Decorated_"+mID)
                 .setContentText("19961226"+randomText)
@@ -234,7 +235,7 @@ public class BigNotification extends AppCompatActivity {
     public void sendCustomNotification(View view){
         int randomText=mRrandom.nextInt(10000);
         RemoteViews remoteViews=new RemoteViews(getPackageName(),R.layout.custom_notification);
-        NotificationCompat.Builder notificationBuilder=new NotificationCompat.Builder(mContext,"channel")
+        NotificationCompat.Builder notificationBuilder=new NotificationCompat.Builder(mContext,"channel1")
                 .setSmallIcon(R.drawable.image)
                 .setContentTitle("custom_"+mID)
                 .setContentText("19961226"+randomText)

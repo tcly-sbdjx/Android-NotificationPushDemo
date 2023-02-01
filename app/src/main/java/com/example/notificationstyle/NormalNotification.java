@@ -39,7 +39,7 @@ public class NormalNotification extends AppCompatActivity {
 
         mContext=getApplicationContext();
         mNotificationManager=(NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-        mNotificationChannel=new NotificationChannel("channel","testChannel",NotificationManager.IMPORTANCE_HIGH);
+        mNotificationChannel=new NotificationChannel("channel","普通通知",NotificationManager.IMPORTANCE_HIGH);
         mNotificationManager.createNotificationChannel(mNotificationChannel);
         mIntent=new Intent(this,MainActivity.class);
         mPendingIntent=PendingIntent.getActivity(this,0,mIntent,PendingIntent.FLAG_IMMUTABLE);

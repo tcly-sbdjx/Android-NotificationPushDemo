@@ -38,7 +38,7 @@ public class CallService extends Service {
                 .build();
         Notification.Builder builder= null;
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            builder = new Notification.Builder(this,"channel")
+            builder = new Notification.Builder(this,"channel1")
                     .setContentTitle("title")
                     .setContentText("text")
                     .setSmallIcon(R.drawable.image);
