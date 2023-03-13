@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomSettingsRow">
+        <attr name="showtype" format="string"/>
+<!--        <attr name="itemtext" format="string"/>-->
+<!--        <attr name="valuetext" format="string"/>-->
+    </declare-styleable>
+</resources>

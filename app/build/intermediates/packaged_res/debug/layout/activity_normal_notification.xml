@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NormalNotification"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/normal_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BASIC"
+        android:gravity="center"
+        android:onClick="sendBasicNotification"
+        />
+
+    <Button
+        android:id="@+id/mini_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="FULL_SCREEN"
+        android:gravity="center"
+        android:onClick="sendFullScreenNotification"
+        />
+
+    <Button
+        android:id="@+id/bigtext_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ONGOING"
+        android:gravity="center"
+        android:onClick="sendOngoingNotification"
+        />
+
+    <Button
+        android:id="@+id/bigpic_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MINIBAR"
+        android:gravity="center"
+        android:onClick="sendMinibarNotification"
+        />
+
+</LinearLayout>

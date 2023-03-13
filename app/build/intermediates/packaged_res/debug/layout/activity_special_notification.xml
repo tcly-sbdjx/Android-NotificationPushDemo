@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SpecialNotification">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/white"
+            app:boxCollapsedPaddingTop="0dp"
+            android:layout_marginTop="10dp"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sid"
+                android:layout_marginStart="0dp"
+                android:layout_width="match_parent"
+                android:hint="ID"
+                android:layout_height="wrap_content"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/white"
+            app:boxBackgroundMode="filled"
+            app:boxCollapsedPaddingTop="0dp"
+            android:layout_marginTop="10dp"
+            app:hintTextColor="@color/black">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:id="@+id/stitle"
+                android:hint="ContentTitle"
+                android:layout_height="wrap_content"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/white"
+            app:boxBackgroundMode="filled"
+            app:boxCollapsedPaddingTop="0dp"
+            android:layout_marginTop="10dp"
+            app:hintTextColor="@color/black">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:id="@+id/stext"
+                android:hint="ContentText"
+                android:layout_height="wrap_content"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/white"
+            app:boxBackgroundMode="filled"
+            app:boxCollapsedPaddingTop="0dp"
+            android:layout_marginTop="10dp"
+            app:hintTextColor="@color/black">
+
+            <EditText
+                android:id="@+id/sstext"
+                android:layout_width="match_parent"
+                android:hint="SubText"
+                android:layout_height="wrap_content"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/ButtonBasic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BASIC NOTIFICATION"
+            android:onClick="sendSpecialBasic"/>
+
+        <Button
+            android:id="@+id/ButtonExpandable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="EXPANDABEL NOTIFICATION"
+            android:onClick="sendSpecialExpandable"/>
+
+        <Button
+            android:id="@+id/ButtonBullet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BULLET NOTIFICATION"
+            android:onClick="sendSpecialBullet"/>
+
+    </LinearLayout>
+</LinearLayout>

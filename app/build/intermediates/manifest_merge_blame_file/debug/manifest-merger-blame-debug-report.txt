@@ -1,0 +1,137 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.notificationstyle"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="32" />
+9-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+11-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:6:5-81
+11-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:6:22-78
+12    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+12-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:7:5-77
+12-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:7:22-74
+13
+14    <application
+14-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:9:5-56:19
+15        android:allowBackup="true"
+15-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:10:9-35
+16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+16-->[androidx.core:core:1.8.0] /home/yly/.gradle/caches/transforms-3/cd33f26b4f6a5be75c2c675ec5e179dc/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
+17        android:dataExtractionRules="@xml/data_extraction_rules"
+17-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:11:9-65
+18        android:debuggable="true"
+19        android:fullBackupContent="@xml/backup_rules"
+19-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:12:9-54
+20        android:icon="@drawable/image"
+20-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:13:9-39
+21        android:label="@string/app_name"
+21-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:14:9-41
+22        android:roundIcon="@mipmap/ic_launcher_round"
+22-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:15:9-54
+23        android:supportsRtl="true"
+23-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:16:9-35
+24        android:testOnly="true"
+25        android:theme="@style/Theme.NotificationStyle" >
+25-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:17:9-55
+26        <service
+26-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:19:9-22:47
+27            android:name="com.example.notificationstyle.CallService"
+27-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:20:13-40
+28            android:enabled="true"
+28-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:21:13-35
+29            android:exported="true" />
+29-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:22:13-36
+30        <service
+30-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:23:9-26:39
+31            android:name="com.example.notificationstyle.MediaService"
+31-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:24:13-41
+32            android:enabled="true"
+32-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:25:13-35
+33            android:exported="true" />
+33-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:26:13-36
+34
+35        <activity
+35-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:28:9-30:40
+36            android:name="com.example.notificationstyle.SpecialNotification"
+36-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:29:13-48
+37            android:exported="false" />
+37-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:30:13-37
+38        <activity
+38-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:31:9-33:40
+39            android:name="com.example.notificationstyle.GroupNotificatin"
+39-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:32:13-45
+40            android:exported="false" />
+40-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:33:13-37
+41        <activity
+41-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:34:9-36:40
+42            android:name="com.example.notificationstyle.BigNotification"
+42-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:35:13-44
+43            android:exported="false" />
+43-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:36:13-37
+44        <activity
+44-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:37:9-39:40
+45            android:name="com.example.notificationstyle.NormalNotification"
+45-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:38:13-47
+46            android:exported="false" />
+46-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:39:13-37
+47        <activity
+47-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:40:9-42:40
+48            android:name="com.example.notificationstyle.Settings"
+48-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:41:13-37
+49            android:exported="false" />
+49-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:42:13-37
+50        <activity
+50-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:43:9-55:20
+51            android:name="com.example.notificationstyle.MainActivity"
+51-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:44:13-41
+52            android:exported="true" >
+52-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:45:13-36
+53            <intent-filter>
+53-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:46:13-50:29
+54                <action android:name="android.intent.action.MAIN" />
+54-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:47:17-69
+54-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:47:25-66
+55
+56                <category android:name="android.intent.category.LAUNCHER" />
+56-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:49:17-77
+56-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:49:27-74
+57            </intent-filter>
+58
+59            <meta-data
+59-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:52:13-54:53
+60                android:name="android.app.shortcuts"
+60-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:53:17-53
+61                android:resource="@xml/shortcuts" />
+61-->/home/yly/AndroidStudioProjects/NotificationStyle/app/src/main/AndroidManifest.xml:54:17-50
+62        </activity>
+63
+64        <provider
+64-->[androidx.emoji2:emoji2:1.2.0] /home/yly/.gradle/caches/transforms-3/112a099502228b2b317b1c79d5f085b0/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+65            android:name="androidx.startup.InitializationProvider"
+65-->[androidx.emoji2:emoji2:1.2.0] /home/yly/.gradle/caches/transforms-3/112a099502228b2b317b1c79d5f085b0/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
+66            android:authorities="com.example.notificationstyle.androidx-startup"
+66-->[androidx.emoji2:emoji2:1.2.0] /home/yly/.gradle/caches/transforms-3/112a099502228b2b317b1c79d5f085b0/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
+67            android:exported="false" >
+67-->[androidx.emoji2:emoji2:1.2.0] /home/yly/.gradle/caches/transforms-3/112a099502228b2b317b1c79d5f085b0/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
+68            <meta-data
+68-->[androidx.emoji2:emoji2:1.2.0] /home/yly/.gradle/caches/transforms-3/112a099502228b2b317b1c79d5f085b0/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+69                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+69-->[androidx.emoji2:emoji2:1.2.0] /home/yly/.gradle/caches/transforms-3/112a099502228b2b317b1c79d5f085b0/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
+70                android:value="androidx.startup" />
+70-->[androidx.emoji2:emoji2:1.2.0] /home/yly/.gradle/caches/transforms-3/112a099502228b2b317b1c79d5f085b0/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
+71            <meta-data
+71-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/yly/.gradle/caches/transforms-3/7cfe2704946b18bb678666b3953b74c4/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+72                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+72-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/yly/.gradle/caches/transforms-3/7cfe2704946b18bb678666b3953b74c4/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
+73                android:value="androidx.startup" />
+73-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/yly/.gradle/caches/transforms-3/7cfe2704946b18bb678666b3953b74c4/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+74        </provider>
+75    </application>
+76
+77</manifest>
