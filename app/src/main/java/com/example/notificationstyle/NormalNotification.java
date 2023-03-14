@@ -13,6 +13,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -20,6 +22,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class NormalNotification extends AppCompatActivity {
     private NotificationManager mNotificationManager;
@@ -29,6 +33,29 @@ public class NormalNotification extends AppCompatActivity {
     private Intent mIntent;
     private PendingIntent mPendingIntent;
     private Random mRrandom;
+    private NotificationCompat.Builder notificationBuilder;
+    private int len;
+
+
+    private Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            // TODO Auto-generated method stub
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case 0:
+                    notificationBuilder.setProgress(100,len,false);
+                    mNotificationManager.notify(0, notificationBuilder.build());
+
+                    break;
+                case 1:
+                    break;
+                default:
+                    break;
+            }
+        }
+
+    };
 
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -48,7 +75,7 @@ public class NormalNotification extends AppCompatActivity {
 
     public void sendBasicNotification(View view) throws InterruptedException {
         int randomText=mRrandom.nextInt(10000);
-        NotificationCompat.Builder notificationBuilder=new NotificationCompat.Builder(mContext,"channel")
+        notificationBuilder=new NotificationCompat.Builder(mContext,"channel")
                 .setSmallIcon(R.drawable.image)
                 .setContentTitle("basic_"+mID)
                 .setContentIntent(mPendingIntent)
@@ -61,7 +88,7 @@ public class NormalNotification extends AppCompatActivity {
 
     public void sendFullScreenNotification(View view) throws InterruptedException {
         int randomText=mRrandom.nextInt(10000);
-        NotificationCompat.Builder notificationBuilder=new NotificationCompat.Builder(mContext,"channel")
+        notificationBuilder=new NotificationCompat.Builder(mContext,"channel")
                 .setSmallIcon(R.drawable.image)
                 .setContentTitle("fullscreen_"+mID)
                 .setContentText("19961226 "+randomText)
@@ -74,19 +101,18 @@ public class NormalNotification extends AppCompatActivity {
 
     public void sendOngoingNotification(View view){
         int randomText=mRrandom.nextInt(10000);
-        Notification notification=new NotificationCompat.Builder(mContext,"channel")
+        notificationBuilder=new NotificationCompat.Builder(mContext,"channel")
                 .setSmallIcon(R.drawable.image)
                 .setContentTitle("ongoing_"+mID)
                 .setContentText("19961226 "+randomText)
-                .setOngoing(true)
-                .build();
-        mNotificationManager.notify(mID,notification);
+                .setOngoing(true);
+        mNotificationManager.notify(mID,notificationBuilder.build());
         mID+=1;
     }
 
     public void sendMinibarNotification(View view) throws InterruptedException {
         int randomText=mRrandom.nextInt(10000);
-        NotificationCompat.Builder notificationBuilder=new NotificationCompat.Builder(mContext,"channel")
+        notificationBuilder=new NotificationCompat.Builder(mContext,"channel")
                 .setSmallIcon(R.drawable.image)
                 .setContentTitle("minibar_"+mID)
                 .setContentText("19961226 "+randomText)
@@ -96,6 +122,22 @@ public class NormalNotification extends AppCompatActivity {
         Thread.sleep(2000);
         mNotificationManager.notify(mID,notificationBuilder.build());
         mID+=1;
+    }
+
+
+
+
+    public void sendProgreassNotification(View view){
+        int randomText=mRrandom.nextInt(10000);
+        notificationBuilder=new NotificationCompat.Builder(mContext,"channel")
+                .setSmallIcon(R.drawable.image)
+                .setContentTitle("basic_"+mID)
+                .setContentIntent(mPendingIntent)
+                .setAutoCancel(true)
+                .setProgress(100,0,false)
+                .setContentText("19961226 "+randomText);
+        mNotificationManager.notify(0,notificationBuilder.build());
+        new DownLoadThread().start();
     }
 
     @SuppressLint("ResourceType")
@@ -115,4 +157,45 @@ public class NormalNotification extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+
+    private class DownLoadThread extends Thread{
+        private Timer timer = new Timer();
+        @Override
+        public void run() {
+            // TODO Auto-generated method stub
+            super.run();
+            timer.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    // TODO Auto-generated method stub
+
+                    Message msg = new Message();
+                    msg.what = 0;
+                    msg.obj = len;
+                    handler.sendMessage(msg);
+
+                    if(len == 100){
+                        timer.cancel();
+                        handler.sendEmptyMessage(1);
+                    }
+
+                }
+            }, 0, 1000);
+            len = 0;
+            try {
+                while(len < 100){
+                    len++;
+                    Thread.sleep(1000);
+                }
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+
+    }
+
+
 }

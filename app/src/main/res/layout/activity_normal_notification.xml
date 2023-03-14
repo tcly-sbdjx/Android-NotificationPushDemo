@@ -43,4 +43,14 @@
         android:onClick="sendMinibarNotification"
         />
 
+    <Button
+        android:id="@+id/progress_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PROGRESS"
+        android:gravity="center"
+        android:onClick="sendProgreassNotification"
+        />
+
+
 </LinearLayout>
